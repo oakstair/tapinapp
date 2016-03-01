@@ -18,7 +18,7 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>Online AAA</h2>
+          <h2>Online</h2>
           <p>Edit and view your translations on this page. It's super simple!</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
@@ -37,7 +37,7 @@
       <hr/>
 
       <footer>
-        <p>&copy; Tapestry in App Lapp Sa Att Du Slapp Engine - 2016</p>
+        <p>&copy; Tapestry in App Engine - 2016</p>
       </footer>
     </div> <!-- /container -->
     
