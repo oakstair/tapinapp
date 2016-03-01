@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;Like a Boss games</a>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;Acme corporation</a>
         </div>
 
         <t:if test="!loggedIn">
