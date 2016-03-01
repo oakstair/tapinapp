@@ -1,0 +1,88 @@
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+
+project.ext {
+	tapestryVersion = '5.4.0'
+	gaeVersion = '1.9.30'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+    	classpath "com.google.appengine:gradle-appengine-plugin:1.9.30"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    appengineSdk "com.google.appengine:appengine-java-sdk:${gaeVersion}"
+	
+    compile "javax.servlet:servlet-api:2.5"
+    compile "javax.inject:javax.inject:1"
+
+    compile "com.google.appengine:appengine-remote-api:$gaeVersion"
+    compile "com.google.appengine:appengine-api-labs:${gaeVersion}"
+
+	compile "org.slf4j:slf4j-api:1.7.10"
+	compile "org.slf4j:slf4j-jdk14:1.7.10"
+
+    compile("org.apache.tapestry:tapestry-ioc:$tapestryVersion") {
+        exclude module: 'slf4j-log4j12'
+        exclude module: 'log4j'
+    }
+    compile("org.apache.tapestry:tapestry-core:$tapestryVersion") {
+        exclude module: 'slf4j-log4j12'
+        exclude module: 'log4j'
+    }
+
+    testCompile "junit:junit:4.12"
+
+    testCompile "com.google.appengine:appengine-testing:$gaeVersion"
+    testCompile "com.google.appengine:appengine-api-stubs:$gaeVersion"
+}
+
+
+appengine {
+	
+    httpPort = 8888
+    jvmFlags = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8889', '-Xmx1024m', '-XX:MaxPermSize=512m']
+    downloadSdk = true
+
+    appcfg {
+        update {
+             useJava7 = true
+        }
+    
+        email = 'your.name@gmail.com'
+        
+		noCookies = true
+
+        logs {
+            severity = 1
+            numDays = 1
+            outputFile = file('backend.log')
+        }
+
+        app {
+            id = 'tapestry-in-appengine'
+        }
+    }
+}
+
+eclipse {
+    classpath {
+       	downloadSources=true
+    	defaultOutputDir = file('build/exploded-app/WEB-INF/classes/')
+    }
+}
+
+

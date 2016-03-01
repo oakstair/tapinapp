@@ -1,0 +1,44 @@
+<html t:type="Layout" title="Tapestry in App Engine - Demo"
+     company="company"
+     project="project"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Tapestry + App engine = true!</h1>
+        <p>Jada jada jada ....</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+   <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Online AAA</h2>
+          <p>Edit and view your translations on this page. It's super simple!</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Offline</h2>
+          <p>Edit your text files locally and upload through our command line utility.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Secure</h2>
+          <p>You control which users that should have access to which projects.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr/>
+
+      <footer>
+        <p>&copy; Tapestry in App Lapp Sa Att Du Slapp Engine - 2016</p>
+      </footer>
+    </div> <!-- /container -->
+    
+</html>
